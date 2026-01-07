@@ -1,0 +1,19 @@
+.registerBtn {
+  padding: 9px 25px;
+  background-color: #4a7c59;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  height: 42px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  white-space: nowrap;
+}
+
+.registerBtn:hover {
+  background-color: #3d6849;
+}

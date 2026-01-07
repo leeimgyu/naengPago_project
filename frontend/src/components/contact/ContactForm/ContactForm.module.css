@@ -1,0 +1,298 @@
+/* Contact Form Section Styles */
+.contactFormSection {
+  padding: 80px 80px;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionTitle {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 통합 폼 컨테이너 */
+.contactForm {
+  background: #e8f5ed;
+  border: 2px solid #c5e1ce;
+  border-radius: 20px;
+  padding: 48px;
+}
+
+/* 문의 작성 섹션 */
+.inquirySection {
+  margin-bottom: 32px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+
+.required {
+  color: #e74c3c;
+}
+
+.input,
+.select,
+.textarea {
+  padding: 14px 18px;
+  font-size: 15px;
+  border: 2px solid #c5e1ce;
+  border-radius: 12px;
+  background: #ffffff;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--brand-color);
+  box-shadow: 0 0 0 3px rgba(59, 108, 85, 0.1);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+  color: #999;
+}
+
+.select {
+  cursor: pointer;
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 200px;
+  line-height: 1.6;
+}
+
+/* 연락처 정보 섹션 */
+.quickInfoSection {
+  padding-top: 32px;
+  border-top: 1px solid #c5e1ce;
+  margin-bottom: 32px;
+}
+
+.quickInfoTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px 12px;
+  background: #ffffff;
+  border: 1px solid #c5e1ce;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.contactItem:hover {
+  border-color: var(--brand-color);
+  background: #f8fdf9;
+  transform: translateY(-2px);
+}
+
+.contactLabel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--brand-color);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contactValue {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+/* 폼 하단 */
+.formFooter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.privacyNotice {
+  font-size: 13px;
+  color: #888;
+  text-align: center;
+  margin: 0;
+}
+
+.submitButton {
+  padding: 16px 48px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--brand-color);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+  background: #2d5a42;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 108, 85, 0.3);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+/* 반응형 스타일 */
+@media (max-width: 992px) {
+  .contactFormSection {
+    padding: 60px 60px;
+  }
+
+  .infoGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactFormSection {
+    padding: 60px 40px;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+  }
+
+  .sectionSubtitle {
+    font-size: 16px;
+  }
+
+  .contactForm {
+    padding: 32px;
+  }
+
+  .infoGrid {
+    gap: 14px;
+  }
+
+  .contactItem {
+    padding: 14px 12px;
+  }
+
+  .contactLabel {
+    font-size: 12px;
+  }
+
+  .contactValue {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactFormSection {
+    padding: 40px 20px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 28px;
+  }
+
+  .sectionSubtitle {
+    font-size: 15px;
+  }
+
+  .contactForm {
+    padding: 24px;
+  }
+
+  .label {
+    font-size: 14px;
+  }
+
+  .input,
+  .select,
+  .textarea {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .infoGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .contactItem {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 12px 14px;
+  }
+
+  .contactLabel {
+    margin-bottom: 0;
+    font-size: 11px;
+  }
+
+  .contactValue {
+    font-size: 12px;
+    text-align: right;
+  }
+
+  .submitButton {
+    width: 100%;
+    padding: 14px 32px;
+    font-size: 15px;
+  }
+
+  .privacyNotice {
+    font-size: 12px;
+  }
+}

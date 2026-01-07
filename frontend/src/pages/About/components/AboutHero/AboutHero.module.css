@@ -1,0 +1,247 @@
+/* About Hero Styles */
+.aboutHeroSection {
+  padding: 100px 80px 100px;
+  background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);
+}
+
+.heroContainer {
+  max-width: 1290px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* 좌측 이미지 섹션 */
+.imageSection {
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imageWrapper:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.ceoImage {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  display: block;
+}
+
+.imageOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  padding: 30px 25px;
+  color: var(--text-light);
+}
+
+.ceoName {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-light);
+}
+
+.ceoTitle {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+/* 우측 인사말 섹션 */
+.greetingSection {
+  padding: 20px 0;
+}
+
+.greetingTitle {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text-dark);
+  margin-bottom: 40px;
+}
+
+.highlight {
+  color: var(--brand-color);
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: rgba(59, 108, 85, 0.2);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.greetingText {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #444;
+}
+
+.greetingText p {
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.greetingText p:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.greetingText p:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.greetingText p:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.greetingText p:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.greetingText p:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.greetingText p:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.signature {
+  margin-top: 50px;
+  font-size: 16px;
+  color: #666;
+  font-style: italic;
+}
+
+.signature strong {
+  font-style: normal;
+  color: var(--text-dark);
+  font-size: 18px;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 반응형 스타일 */
+@media (max-width: 1200px) {
+  .aboutHeroSection {
+    padding: 100px 60px 80px;
+  }
+
+  .heroContainer {
+    gap: 60px;
+  }
+
+  .greetingTitle {
+    font-size: 36px;
+  }
+
+  .greetingText {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 992px) {
+  .aboutHeroSection {
+    padding: 80px 40px 60px;
+  }
+
+  .heroContainer {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .imageWrapper {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .greetingTitle {
+    font-size: 32px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutHeroSection {
+    padding: 60px 20px 40px;
+  }
+
+  .heroContainer {
+    gap: 40px;
+  }
+
+  .greetingTitle {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+
+  .greetingText {
+    font-size: 15px;
+  }
+
+  .greetingText p {
+    margin-bottom: 20px;
+  }
+
+  .ceoName {
+    font-size: 24px;
+  }
+
+  .ceoTitle {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .greetingTitle {
+    font-size: 24px;
+  }
+
+  .greetingText {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .signature {
+    font-size: 14px;
+    margin-top: 40px;
+  }
+
+  .signature strong {
+    font-size: 16px;
+  }
+}

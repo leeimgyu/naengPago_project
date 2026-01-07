@@ -1,0 +1,83 @@
+/* Login Hero Styles */
+.loginHeroSection {
+  height: 40vh;
+  min-height: 300px;
+  background: linear-gradient(rgba(59, 108, 85, 0.75), rgba(59, 108, 85, 0.85)),
+    url('/image/ingredients/recipe.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -20px;
+  position: relative;
+}
+
+.heroOverlay {
+  text-align: center;
+  color: var(--text-light);
+  z-index: 2;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.heroOverlay h2 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.heroOverlay p {
+  font-size: 18px;
+  font-weight: 500;
+  opacity: 0.95;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 991px) {
+  .loginHeroSection {
+    height: 35vh;
+  }
+
+  .heroOverlay h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 767px) {
+  .loginHeroSection {
+    height: 30vh;
+    min-height: 250px;
+    background-attachment: scroll;
+  }
+
+  .heroOverlay h2 {
+    font-size: 28px;
+  }
+
+  .heroOverlay p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 479px) {
+  .heroOverlay h2 {
+    font-size: 24px;
+  }
+
+  .heroOverlay p {
+    font-size: 14px;
+  }
+}

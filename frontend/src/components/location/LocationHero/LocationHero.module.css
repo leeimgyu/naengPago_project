@@ -1,0 +1,108 @@
+.heroSection {
+  background: linear-gradient(135deg, #e8f1ec 0%, #f0f8f4 100%);
+  margin-top:70px;
+  min-height: 350px;
+  height:40vh;
+  padding: 80px 80px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+}
+
+.heroContent {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.heroTitle {
+  font-size: 56px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: var(--brand-color);
+}
+
+.heroSubtitle {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 10px;
+  /* line-height: 1.6; */
+}
+
+.addressBox {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.addressLabel {
+  font-size: 14px;
+  font-weight: 600;
+  color: #4F8069;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+.addressText {
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+.addressDetailText {
+  font-weight: 700; 
+  letter-spacing: 0.5px; 
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 60px 40px;
+  }
+
+  .heroTitle {
+    font-size: 40px;
+  }
+
+  .heroSubtitle {
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    padding: 40px 20px;
+  }
+
+  .heroTitle {
+    font-size: 32px;
+  }
+
+  .heroSubtitle {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,130 @@
+spring:
+  application:
+    name: backend
+
+  # File Upload Configuration
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 10MB        # 단일 파일 최대 크기
+      max-request-size: 50MB     # 전체 요청 최대 크기
+      file-size-threshold: 2KB   # 메모리에 저장할 임계값
+
+  # Database Configuration (PostgreSQL with log4jdbc)
+  datasource:
+    # log4jdbc를 사용하여 SQL 쿼리 로깅
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+    url: jdbc:log4jdbc:postgresql://15.164.219.22:5432/naengpago
+    username: naengpago
+    password: 1234
+
+    # HikariCP Connection Pool 설정
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      pool-name: NaengpagoHikariPool
+
+  # JPA Configuration
+  jpa:
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: none  # 스키마 자동 업데이트 비활성화 (수동 마이그레이션 사용)
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+    show-sql: false  # log4jdbc가 쿼리를 로깅하므로 false로 설정
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+        jdbc:
+          batch_size: 20
+          fetch_size: 50
+        order_inserts: true
+        order_updates: true
+        default_batch_fetch_size: 100
+
+  # OAuth2 Configuration (Google 소셜 로그인)
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${GOOGLE_CLIENT_ID}
+            client-secret: ${GOOGLE_CLIENT_SECRET}
+            redirect-uri: "http://localhost:8080/api/auth/oauth2/callback/google"
+            scope:
+              - profile
+              - email
+        provider:
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+            token-uri: https://oauth2.googleapis.com/token
+            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+
+# JWT Configuration
+jwt:
+  secret: naengpago-secret-key-for-jwt-token-generation-min-256-bits-required
+  access-token-validity: 3600000    # 1시간 (밀리초)
+  refresh-token-validity: 604800000  # 7일 (밀리초)
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    com.backend: DEBUG
+    org.springframework.web: DEBUG
+
+    # log4jdbc 로깅 설정 (SQL 쿼리 및 파라미터 로깅)
+    jdbc.sqlonly: OFF        # SQL만 로깅 (파라미터 제외)
+    jdbc.sqltiming: DEBUG    # SQL 실행 시간 로깅
+    jdbc.audit: OFF          # ResultSet 제외한 모든 JDBC 호출 로깅
+    jdbc.resultset: OFF      # ResultSet 로깅 (대량 데이터 주의)
+    jdbc.resultsettable: DEBUG  # ResultSet을 테이블 형태로 로깅
+    jdbc.connection: OFF     # Connection 열기/닫기 로깅
+
+    # Hibernate 로깅 (log4jdbc 사용 시 비활성화)
+    org.hibernate.SQL: OFF
+    org.hibernate.type.descriptor.sql.BasicBinder: OFF
+    org.hibernate.orm.jdbc.bind: OFF
+
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+
+# Server Configuration
+server:
+  tomcat:
+    uri-encoding: UTF-8
+  port: 8080
+  servlet:
+    context-path: /  # Context-path 제거 (Controller에서 /api 경로 직접 사용)
+
+# File Upload Custom Configuration
+file:
+  upload:
+    notice-path: uploads/notices     # 공지사항 파일 업로드 경로
+    base-url: http://localhost:8080/files  # 파일 접근 URL
+
+# recipe api
+recipe:
+  api:
+    base-url: https://openapi.foodsafetykorea.go.kr/api
+    key: 551cedbc1f274945905d
+
+# gemini api
+gemini:
+  api:
+    key: AIzaSyCzLF416Pnpl-uSU08gsZvf8nWooP_cnw4
+    base-url: "https://generativelanguage.googleapis.com/v1beta"
+    model: "gemini-2.5-flash"
+    timeout: 30
+
+# kakao api
+kakao:
+  api:
+    key: 0bb2efec8c4bbaafab4c7ed3f4f767fd  # ⚠️ 여기에 발급받은 REST API 키를 입력하세요

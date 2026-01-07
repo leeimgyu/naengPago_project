@@ -1,0 +1,394 @@
+/* Signup Form Styles */
+.signupFormSection {
+  padding: 80px 20px 100px;
+  background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);
+}
+
+.signupCard {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px;
+  background: var(--text-light);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.formTitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.formSubtitle {
+  font-size: 15px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.signupForm {
+  width: 100%;
+}
+
+.formGroup {
+  margin-bottom: 24px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 14px;
+}
+
+.formGroup .required {
+  color: #f44637;
+  margin-left: 2px;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup input[type="password"],
+.formGroup input[type="tel"] {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.formGroup input::placeholder {
+  color: #999999;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: #3b6c55;
+  background: var(--text-light);
+  box-shadow: 0 0 0 3px rgba(59, 108, 85, 0.1);
+}
+
+.formGroup.error input {
+  border-color: #f44637;
+  background: #fff5f5;
+}
+
+.formGroup.success input {
+  border-color: #4caf50;
+  background: #f0f9f4;
+}
+
+.passwordRequirements,
+.inputHint {
+  margin-top: 6px;
+}
+
+.passwordRequirements small,
+.inputHint small {
+  font-size: 13px;
+  color: #888;
+}
+
+.errorMessage {
+  display: none;
+  color: #f44637;
+  font-size: 13px;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.errorMessage.active {
+  display: block;
+  animation: slideDown 0.3s ease-out;
+}
+
+.checkboxGroup {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  cursor: pointer;
+  position: relative;
+  padding-left: 32px;
+}
+
+.checkboxLabel:last-child {
+  margin-bottom: 0;
+}
+
+.checkboxLabel input[type="checkbox"] {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--brand-color);
+}
+
+.checkboxLabel .checkboxText {
+  font-size: 14px;
+  color: var(--text-dark);
+  flex: 1;
+}
+
+.checkboxLabel.checkboxAll {
+  font-weight: 600;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.checkboxLabel.checkboxAll .checkboxText {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.termsDetail {
+  margin-left: 0;
+}
+
+.termsLink {
+  font-size: 13px;
+  color: var(--brand-color);
+  text-decoration: underline;
+  margin-left: auto;
+  padding-left: 10px;
+}
+
+.termsLink:hover {
+  color: #2a5240;
+}
+
+.btnSignup {
+  width: 100%;
+  padding: 16px;
+  background: var(--brand-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btnSignup:hover {
+  background: #2a5240;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(59, 108, 85, 0.3);
+}
+
+.btnSignup:active {
+  transform: translateY(0);
+}
+
+.btnSignup:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btnSignup .btnLoading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.formFooter {
+  text-align: center;
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+}
+
+.formFooter p {
+  font-size: 14px;
+  color: #666;
+}
+
+.formFooter a {
+  color: var(--brand-color);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.formFooter a:hover {
+  color: #2a5240;
+}
+
+.addressGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addressPostal {
+  display: flex;
+  gap: 10px;
+}
+
+.addressPostal input {
+  flex: 1;
+}
+
+.btnAddressSearch {
+  padding: 14px 20px;
+  background: var(--brand-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btnAddressSearch:hover {
+  background: #2a5240;
+}
+
+.btnAddressSearch:active {
+  transform: scale(0.98);
+}
+
+.addressGroup input[readonly] {
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.addressGroup input[readonly]:focus {
+  background: #f5f5f5;
+}
+
+#addressDetail {
+  background: #fafafa;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 992px) {
+  .signupCard {
+    padding: 40px 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .signupFormSection {
+    padding: 50px 20px 60px;
+  }
+
+  .signupCard {
+    padding: 30px 20px;
+    border-radius: 15px;
+  }
+
+  .formTitle {
+    font-size: 24px;
+  }
+
+  .formSubtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .formGroup input[type="text"],
+  .formGroup input[type="email"],
+  .formGroup input[type="password"],
+  .formGroup input[type="tel"] {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .checkboxGroup {
+    padding: 15px;
+  }
+
+  .checkboxLabel {
+    font-size: 13px;
+  }
+
+  .btnSignup {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .addressPostal {
+    flex-direction: column;
+  }
+
+  .btnAddressSearch {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .signupCard {
+    padding: 25px 15px;
+  }
+
+  .formTitle {
+    font-size: 22px;
+  }
+
+  .checkboxLabel {
+    padding-left: 28px;
+  }
+
+  .checkboxLabel input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+  }
+}

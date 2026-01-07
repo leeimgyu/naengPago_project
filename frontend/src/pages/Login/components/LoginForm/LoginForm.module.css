@@ -1,0 +1,326 @@
+/* Login Form Styles */
+.loginFormSection {
+  padding: 80px 20px 100px;
+  background: linear-gradient(to bottom, #ffffff 0%, #fafafa 100%);
+}
+
+.loginCard {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px;
+  background: var(--text-light);
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.6s ease-out;
+}
+
+.formTitle {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.formSubtitle {
+  font-size: 15px;
+  color: #666;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.loginForm {
+  width: 100%;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 14px;
+}
+
+.required {
+  color: #f44637;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup input[type="password"] {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  color: var(--text-dark);
+  background: var(--text-light);
+  transition: all 0.2s ease;
+}
+
+.formGroup input::placeholder {
+  color: #999999;
+}
+
+.formGroup input:focus {
+  border-color: #3b6c55;
+  box-shadow: 0 0 0 3px rgba(59, 108, 85, 0.1);
+  outline: none;
+}
+
+.passwordWrapper {
+  position: relative;
+}
+
+.passwordWrapper input {
+  padding-right: 50px;
+}
+
+.btnPasswordToggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #999;
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.btnPasswordToggle:hover {
+  color: var(--brand-color);
+}
+
+.eyeIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.formGroup.error input {
+  border-color: #f44637;
+  background: rgba(244, 70, 55, 0.05);
+}
+
+.formGroup.success input {
+  border-color: #4caf50;
+  background: rgba(76, 175, 80, 0.05);
+}
+
+.errorMessage {
+  display: block;
+  color: #f44637;
+  font-size: 13px;
+  margin-top: 6px;
+  min-height: 18px;
+  opacity: 1;
+  transition: opacity 0.2s ease;
+}
+
+.errorMessage.active {
+  opacity: 1;
+}
+
+.checkboxGroup {
+  margin-bottom: 24px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkboxLabel input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  cursor: pointer;
+  accent-color: var(--brand-color);
+}
+
+.checkboxText {
+  font-size: 14px;
+  color: #666;
+}
+
+.btnLogin {
+  width: 100%;
+  padding: 16px;
+  background: var(--brand-color);
+  color: var(--text-light);
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.btnLogin:hover {
+  background: #2a5240;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(59, 108, 85, 0.3);
+}
+
+.btnLogin:active {
+  transform: translateY(0);
+}
+
+.btnLogin:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btnLogin .btnText {
+  display: inline;
+}
+
+.btnLogin .btnLoading {
+  display: none;
+  align-items: center;
+  gap: 10px;
+}
+
+.btnLogin.loading .btnText {
+  display: none;
+}
+
+.btnLogin.loading .btnLoading {
+  display: flex;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.formFooter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+
+.formFooter .separator {
+  color: #ddd;
+}
+
+.linkSecondary {
+  color: #666;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.linkSecondary:hover {
+  color: var(--brand-color);
+  text-decoration: underline;
+}
+
+.linkPrimary {
+  color: var(--brand-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.linkPrimary:hover {
+  color: #2a5240;
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 991px) {
+  .loginCard {
+    max-width: 480px;
+    padding: 40px;
+  }
+
+  .formTitle {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 767px) {
+  .loginFormSection {
+    padding: 50px 20px 70px;
+  }
+
+  .loginCard {
+    padding: 30px 20px;
+    border-radius: 16px;
+  }
+
+  .formTitle {
+    font-size: 24px;
+  }
+
+  .formSubtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .formGroup {
+    margin-bottom: 18px;
+  }
+
+  .formGroup input {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .btnLogin {
+    padding: 14px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 479px) {
+  .loginCard {
+    padding: 25px 15px;
+  }
+
+  .formTitle {
+    font-size: 22px;
+  }
+
+  .formSubtitle {
+    font-size: 13px;
+  }
+}

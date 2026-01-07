@@ -1,0 +1,31 @@
+/* Loading Overlay Styles */
+.loadingOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 70vh;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.loadingContent {
+  text-align: center;
+  padding-top: 10%;
+}
+
+.loadingContent h2 {
+  font-size: 42px;
+  color: var(--text-dark);
+}
+
+.loadingContent p {
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 10px;
+}

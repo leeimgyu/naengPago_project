@@ -1,0 +1,112 @@
+.review-form {
+  margin-bottom: 24px;
+  padding: 16px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.review-form h3 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+  background-color: white;
+  transition: border-color 0.2s, height 0.2s;
+}
+
+.form-group textarea {
+  resize: none;
+}
+
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3B6C55;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999;
+}
+
+.rating-input {
+  display: flex;
+  gap: 4px;
+  padding: 8px 0;
+}
+
+.rating-star {
+  font-size: 28px;
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.rating-star.filled {
+  color: #ffc107;
+}
+
+.rating-star:hover {
+  color: #ffc107;
+}
+
+.form-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+
+.cancel-btn,
+.submit-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.cancel-btn {
+  background-color: #e9ecef;
+  color: #333;
+}
+
+.cancel-btn:hover {
+  background-color: #dee2e6;
+}
+
+.submit-btn {
+  background-color: #3B6C55;
+  color: white;
+}
+
+.submit-btn:hover {
+  background-color: #2d543f;
+}

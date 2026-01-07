@@ -1,0 +1,262 @@
+/* Vision Content Styles - Zigzag Layout */
+.visionContentSection {
+  padding: 100px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Vision Item - Flex Container for Zigzag */
+.visionItem {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 120px;
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.visionItem:last-child {
+  margin-bottom: 0;
+}
+
+/* Reversed Layout (이미지 우측, 콘텐츠 좌측) */
+.visionItem.reversed {
+  flex-direction: row-reverse;
+}
+
+/* Image Wrapper */
+.imageWrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+}
+
+.imageContainer:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.25);
+}
+
+.visionImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.imageContainer:hover .visionImage {
+  transform: scale(1.05);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    180deg,
+    rgba(59, 108, 85, 0.1) 0%,
+    rgba(59, 108, 85, 0.3) 100%
+  );
+  pointer-events: none;
+}
+
+/* Content Wrapper */
+.contentWrapper {
+  flex: 1;
+  min-width: 0;
+}
+
+.content {
+  padding: 20px 0;
+}
+
+.subtitle {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--brand-color, #3b6c55);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  padding: 8px 16px;
+  background: rgba(59, 108, 85, 0.1);
+  border-radius: 20px;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--text-dark, #1a1a1a);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text-medium, #4a4a4a);
+  margin-bottom: 30px;
+}
+
+/* Benefits List */
+.benefitsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.benefitItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-medium, #4a4a4a);
+  margin-bottom: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.benefitItem:last-child {
+  border-bottom: none;
+}
+
+.checkIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: var(--brand-color, #3b6c55);
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .visionItem {
+    gap: 40px;
+    margin-bottom: 80px;
+  }
+
+  .imageContainer {
+    height: 380px;
+  }
+
+  .title {
+    font-size: 36px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .benefitItem {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .visionContentSection {
+    padding: 60px 0;
+  }
+
+  .visionItem {
+    flex-direction: column !important;
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+
+  .visionItem.reversed {
+    flex-direction: column !important;
+  }
+
+  .imageContainer {
+    height: 300px;
+  }
+
+  .title {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .description {
+    font-size: 15px;
+    margin-bottom: 25px;
+  }
+
+  .benefitItem {
+    font-size: 14px;
+    margin-bottom: 12px;
+    padding: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .visionContentSection {
+    padding: 40px 0;
+  }
+
+  .visionItem {
+    margin-bottom: 50px;
+  }
+
+  .imageContainer {
+    height: 250px;
+    border-radius: 15px;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 14px;
+  }
+
+  .benefitItem {
+    font-size: 13px;
+  }
+
+  .checkIcon {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+}

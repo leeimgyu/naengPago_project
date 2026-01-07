@@ -1,0 +1,182 @@
+### ===================================================
+### 인증 API 테스트 - HTTP Client
+### IntelliJ IDEA HTTP Client 또는 REST Client 플러그인 사용
+### ===================================================
+
+### 환경 변수 설정
+@baseUrl = http://localhost:8080
+@contentType = application/json
+
+### 회원가입 - 정상 케이스
+POST {{baseUrl}}/api/auth/signup
+Content-Type: {{contentType}}
+
+{
+  "username": "testuser",
+  "email": "test@example.com",
+  "password": "Test1234",
+  "fullName": "테스트 유저",
+  "phone": "01012345678"
+}
+
+### 회원가입 - 중복 이메일 (409 Conflict 예상)
+POST {{baseUrl}}/api/auth/signup
+Content-Type: {{contentType}}
+
+{
+  "username": "testuser2",
+  "email": "test@example.com",
+  "password": "Test1234",
+  "fullName": "테스트 유저2",
+  "phone": "01087654321"
+}
+
+### 회원가입 - 유효성 검증 실패 (400 Bad Request 예상)
+POST {{baseUrl}}/api/auth/signup
+Content-Type: {{contentType}}
+
+{
+  "username": "ab",
+  "email": "invalid-email",
+  "password": "short",
+  "fullName": "테",
+  "phone": "123"
+}
+
+### ===================================================
+### 로그인 테스트
+### ===================================================
+
+### 로그인 - 정상 케이스
+POST {{baseUrl}}/api/auth/signin
+Content-Type: {{contentType}}
+
+{
+  "email": "test@example.com",
+  "password": "Test1234"
+}
+
+> {%
+    client.global.set("accessToken", response.body.data.accessToken);
+    client.global.set("refreshToken", response.body.data.refreshToken);
+    client.log("Access Token: " + response.body.data.accessToken);
+    client.log("Refresh Token: " + response.body.data.refreshToken);
+%}
+
+### 로그인 - 잘못된 비밀번호 (401 Unauthorized 예상)
+POST {{baseUrl}}/api/auth/signin
+Content-Type: {{contentType}}
+
+{
+  "email": "test@example.com",
+  "password": "WrongPassword123"
+}
+
+### 로그인 - 존재하지 않는 사용자 (401 Unauthorized 예상)
+POST {{baseUrl}}/api/auth/signin
+Content-Type: {{contentType}}
+
+{
+  "email": "nonexistent@example.com",
+  "password": "Test1234"
+}
+
+### ===================================================
+### 현재 사용자 정보 조회 테스트
+### ===================================================
+
+### 현재 사용자 정보 조회 - 정상 케이스
+GET {{baseUrl}}/api/auth/me
+Authorization: Bearer {{accessToken}}
+
+### 현재 사용자 정보 조회 - 토큰 없음 (401 Unauthorized 예상)
+GET {{baseUrl}}/api/auth/me
+
+### 현재 사용자 정보 조회 - 유효하지 않은 토큰 (401 Unauthorized 예상)
+GET {{baseUrl}}/api/auth/me
+Authorization: Bearer invalid.jwt.token
+
+### ===================================================
+### 토큰 갱신 테스트
+### ===================================================
+
+### 토큰 갱신 - 정상 케이스
+POST {{baseUrl}}/api/auth/refresh
+Content-Type: {{contentType}}
+
+{
+  "refreshToken": "{{refreshToken}}"
+}
+
+> {%
+    client.global.set("accessToken", response.body.data.accessToken);
+    client.log("New Access Token: " + response.body.data.accessToken);
+%}
+
+### 토큰 갱신 - 유효하지 않은 Refresh Token (401 Unauthorized 예상)
+POST {{baseUrl}}/api/auth/refresh
+Content-Type: {{contentType}}
+
+{
+  "refreshToken": "invalid.refresh.token"
+}
+
+### ===================================================
+### 로그아웃 테스트
+### ===================================================
+
+### 로그아웃 - 정상 케이스
+POST {{baseUrl}}/api/auth/signout
+
+### ===================================================
+### 전체 플로우 테스트
+### ===================================================
+
+### 1. 회원가입
+POST {{baseUrl}}/api/auth/signup
+Content-Type: {{contentType}}
+
+{
+  "username": "flowtest",
+  "email": "flowtest@example.com",
+  "password": "Flow1234",
+  "fullName": "플로우 테스트",
+  "phone": "01011112222"
+}
+
+### 2. 로그인
+POST {{baseUrl}}/api/auth/signin
+Content-Type: {{contentType}}
+
+{
+  "email": "flowtest@example.com",
+  "password": "Flow1234"
+}
+
+> {%
+    client.global.set("flowAccessToken", response.body.data.accessToken);
+    client.global.set("flowRefreshToken", response.body.data.refreshToken);
+%}
+
+### 3. 사용자 정보 조회
+GET {{baseUrl}}/api/auth/me
+Authorization: Bearer {{flowAccessToken}}
+
+### 4. 토큰 갱신
+POST {{baseUrl}}/api/auth/refresh
+Content-Type: {{contentType}}
+
+{
+  "refreshToken": "{{flowRefreshToken}}"
+}
+
+> {%
+    client.global.set("flowAccessToken", response.body.data.accessToken);
+%}
+
+### 5. 갱신된 토큰으로 사용자 정보 조회
+GET {{baseUrl}}/api/auth/me
+Authorization: Bearer {{flowAccessToken}}
+
+### 6. 로그아웃
+POST {{baseUrl}}/api/auth/signout

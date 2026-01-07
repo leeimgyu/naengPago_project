@@ -1,0 +1,115 @@
+/* Grocery Hero Styles */
+.groceryHeroSection {
+  background: linear-gradient(135deg, #e8f1ec 0%, #f0f8f4 100%);
+  padding: 100px 80px 60px;
+  margin-top: 70px; 
+  height:40vh;
+  min-height: 350px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.groceryHeroSection::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(59, 108, 85, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.heroContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.heroContent {
+  max-width: 800px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--text-dark);
+  margin-bottom: 30px;
+}
+
+.highlight {
+  color: var(--brand-color);
+  position: relative;
+  display: inline-block;
+}
+
+.highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  right: 0;
+  height: 16px;
+  background: rgba(59, 108, 85, 0.2);
+  z-index: -1;
+  border-radius: 4px;
+}
+
+.heroSubtitle {
+  font-size: 20px;
+  line-height: 1.7;
+  color: #666;
+  margin-bottom: 0;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 992px) {
+  .groceryHeroSection {
+    padding: 80px 60px 50px;
+    min-height: 320px;
+  }
+
+  .heroTitle {
+    font-size: 48px;
+  }
+
+  .heroSubtitle {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .groceryHeroSection {
+    padding: 70px 40px 40px;
+    min-height: 300px;
+  }
+
+  .heroTitle {
+    font-size: 40px;
+  }
+
+  .heroSubtitle {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .groceryHeroSection {
+    padding: 60px 20px 30px;
+    min-height: 280px;
+  }
+
+  .heroTitle {
+    font-size: 32px;
+  }
+
+  .heroSubtitle {
+    font-size: 15px;
+  }
+}

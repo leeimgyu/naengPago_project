@@ -1,0 +1,253 @@
+/* Contact Info Section Styles */
+.contactInfoSection {
+  padding: 80px 80px 100px;
+  background: #f8fdf9;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionTitle {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-bottom: 60px;
+}
+
+.contactCard {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 40px;
+  border: 2px solid #e8f1ec;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.contactCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--brand-color), #4CAF50);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.contactCard:hover::before {
+  transform: scaleX(1);
+}
+
+.contactCard:hover {
+  border-color: var(--brand-color);
+  box-shadow: 0 8px 24px rgba(59, 108, 85, 0.12);
+  transform: translateY(-4px);
+}
+
+.cardHeader {
+  margin-bottom: 24px;
+}
+
+.category {
+  display: inline-block;
+  padding: 6px 16px;
+  background: #e8f1ec;
+  color: var(--brand-color);
+  font-size: 13px;
+  font-weight: 600;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.cardBody {
+  border-top: 1px solid #e8f1ec;
+  padding-top: 24px;
+}
+
+.mainContent {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--brand-color);
+  margin-bottom: 12px;
+  word-break: break-all;
+}
+
+.detailContent {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #666;
+  margin: 0;
+}
+
+.additionalInfo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  padding: 48px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 2px dashed #e8f1ec;
+}
+
+.infoBox {
+  text-align: center;
+}
+
+.infoTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.infoText {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #666;
+  margin: 0;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 992px) {
+  .contactInfoSection {
+    padding: 60px 60px 80px;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+  }
+
+  .cardsGrid {
+    gap: 24px;
+  }
+
+  .contactCard {
+    padding: 32px;
+  }
+
+  .cardTitle {
+    font-size: 22px;
+  }
+
+  .mainContent {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactInfoSection {
+    padding: 50px 40px 60px;
+  }
+
+  .sectionHeader {
+    margin-bottom: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+  }
+
+  .sectionSubtitle {
+    font-size: 16px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .contactCard {
+    padding: 28px;
+  }
+
+  .cardTitle {
+    font-size: 20px;
+  }
+
+  .mainContent {
+    font-size: 18px;
+  }
+
+  .additionalInfo {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactInfoSection {
+    padding: 40px 20px 50px;
+  }
+
+  .sectionTitle {
+    font-size: 28px;
+  }
+
+  .sectionSubtitle {
+    font-size: 15px;
+  }
+
+  .contactCard {
+    padding: 24px;
+  }
+
+  .category {
+    font-size: 12px;
+    padding: 5px 14px;
+  }
+
+  .cardTitle {
+    font-size: 18px;
+  }
+
+  .mainContent {
+    font-size: 16px;
+  }
+
+  .detailContent {
+    font-size: 14px;
+  }
+
+  .additionalInfo {
+    padding: 24px;
+  }
+
+  .infoTitle {
+    font-size: 18px;
+  }
+
+  .infoText {
+    font-size: 14px;
+  }
+}

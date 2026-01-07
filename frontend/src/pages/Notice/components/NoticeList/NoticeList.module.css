@@ -1,0 +1,146 @@
+.noticeBoard {
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.boardTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.boardTable thead {
+  background-color: #f8f9fa;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.boardTable th {
+  padding: 16px 12px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+}
+
+.boardTable th.colNumber {
+  width: 80px;
+}
+
+.boardTable th.colCategory {
+  width: 100px;
+}
+
+.boardTable th.colTitle {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.boardTable th.colAuthor {
+  width: 120px;
+}
+
+.boardTable th.colDate {
+  width: 120px;
+}
+
+.boardTable th.colViews {
+  width: 80px;
+}
+
+.boardTable tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.2s;
+}
+
+.boardTable tbody tr:hover {
+  background-color: #e8f1ec;
+
+}
+
+.boardTable tbody tr.noticePinned {
+  background-color: #fde3cb75;
+}
+
+.boardTable tbody tr.noticePinned:hover {
+  background-color: #FFDAB9;
+}
+
+.boardTable tbody tr.noticePinned:hover td,
+.boardTable tbody tr.noticePinned:hover .titleLink {
+  color: #333;
+}
+
+.boardTable td {
+  padding: 18px 12px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.boardTable td.colNumber {
+  font-weight: 500;
+  color: #999;
+}
+
+.boardTable td.colNumber.pinned {
+  color: #4a7c59;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.boardTable td.colCategory .badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: transparent;
+}
+
+.boardTable td.colTitle {
+  text-align: left;
+  padding-left: 20px;
+}
+
+.titleLink {
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.titleLink:hover {
+  color: #4a7c59;
+}
+
+.titleLink.hasNew::after {
+  content: 'NEW';
+  display: inline-block;
+  background-color: transparent;
+  color: #ff3b3b;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 0;
+  border-radius: 0;
+  margin-left: 5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .boardTable th.colAuthor,
+  .boardTable th.colViews,
+  .boardTable td.colAuthor,
+  .boardTable td.colViews {
+    display: none;
+  }
+
+  .boardTable th.colDate,
+  .boardTable td.colDate {
+    width: 90px;
+    font-size: 12px;
+  }
+}

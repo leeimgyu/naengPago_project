@@ -1,0 +1,100 @@
+/* Address Search Styles */
+.formGroup {
+  margin-bottom: 24px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 14px;
+}
+
+.addressGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.addressPostal {
+  display: flex;
+  gap: 10px;
+}
+
+.addressPostal input {
+  flex: 1;
+}
+
+/* Base input styles matching other form inputs */
+.addressGroup input[type="text"] {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.addressGroup input::placeholder {
+  color: #999999;
+}
+
+.addressGroup input:focus {
+  outline: none;
+  border-color: #3b6c55;
+  background: var(--text-light);
+  box-shadow: 0 0 0 3px rgba(59, 108, 85, 0.1);
+}
+
+.btnAddressSearch {
+  padding: 14px 20px;
+  background: var(--brand-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.btnAddressSearch:hover {
+  background: #2a5240;
+}
+
+.btnAddressSearch:active {
+  transform: scale(0.98);
+}
+
+.addressGroup input[readonly] {
+  background: #f5f5f5;
+  cursor: pointer;
+}
+
+.addressGroup input[readonly]:focus {
+  background: #f5f5f5;
+  box-shadow: none;
+}
+
+#address-detail {
+  background: #fafafa;
+}
+
+@media (max-width: 768px) {
+  .addressGroup input[type="text"] {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+
+  .addressPostal {
+    flex-direction: column;
+  }
+
+  .btnAddressSearch {
+    width: 100%;
+  }
+}

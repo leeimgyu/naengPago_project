@@ -1,0 +1,136 @@
+.searchBar {
+  margin-bottom: 48px;
+}
+
+.searchBarInner {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: white;
+  border: 2px solid #d4e4dc;
+  border-radius: 50px;
+  padding: 4px 10px 4px 24px;
+  transition: all 0.3s;
+  box-shadow: 0 2px 12px rgba(59, 108, 85, 0.08);
+}
+
+.searchForm:focus-within {
+  border-color: #3b6c55;
+  box-shadow: 0 4px 20px rgba(59, 108, 85, 0.15);
+}
+
+.searchIcon {
+  color: #999;
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.searchForm:focus-within .searchIcon {
+  color: #3b6c55;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 16px;
+  color: #333;
+  padding: 10px 8px;
+}
+
+.searchInput::placeholder {
+  color: #aaa;
+}
+
+.clearButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.clearButton:hover {
+  background: #f0f7f4;
+  color: #666;
+}
+
+.searchButton {
+  background: #3b6c55;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(59, 108, 85, 0.2);
+}
+
+.searchButton:hover {
+  background: #2a5240;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(59, 108, 85, 0.3);
+}
+
+.searchButton:active {
+  transform: translateY(0);
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .searchBar {
+    margin-bottom: 36px;
+  }
+  
+  .searchForm {
+    padding: 4px 8px 4px 20px;
+  }
+  
+  .searchInput {
+    font-size: 15px;
+    padding: 9px 6px;
+  }
+  
+  .searchButton {
+    padding: 9px 24px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .searchBar {
+    margin-bottom: 32px;
+  }
+  
+  .searchForm {
+    padding: 3px 6px 3px 16px;
+  }
+  
+  .searchIcon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .searchInput {
+    padding: 8px 6px;
+  }
+  
+  .searchButton {
+    padding: 8px 20px;
+  }
+}

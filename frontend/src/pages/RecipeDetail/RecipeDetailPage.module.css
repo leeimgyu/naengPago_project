@@ -1,0 +1,139 @@
+.app {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 75px 20px 20px 20px;
+}
+
+.appContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 40px; /* Default for >= 1024px */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.backButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.backButton:hover {
+  border: 2px solid #3B6C55;
+}
+
+.backButton:hover svg {
+  stroke: #3B6C55;
+}
+
+.viewControlsWrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.recipeContent {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.cookingStepsWrapper {
+  flex: 1;
+}
+
+.interactionSection {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid #e9ecef;
+}
+
+.actionButtons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  gap: 10px;
+}
+
+.editButton {
+  background-color: #fb9a5a;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.editButton:hover {
+  background-color:#fb8a3f;
+}
+
+.deleteButton {
+  background-color: #ef5350; 
+}
+
+.deleteButton:hover {
+  background-color:#e53935;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .appContainer {
+    padding: 20px;
+  }
+  .recipeContent{
+    gap:20px
+  }
+  .ingredientsWrapper {
+    width: 33%;
+  }
+  .editButton {
+    width: 115px;
+  }
+}
+
+@media (max-width: 767px) {
+  .app {
+    padding: 75px 10px 10px 10px;
+  }
+
+  .appContainer {
+    padding: 10px;
+  }
+
+  .recipeContent {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .ingredientsWrapper {
+    width: 100%;
+    order: 1;
+  }
+
+  .cookingStepsWrapper {
+    order: 2;
+  }
+
+  .editButton {
+    order: 3;
+    position: static;
+    width: 115px;
+    margin-top: 20px;
+    margin-left: auto;
+  }
+}

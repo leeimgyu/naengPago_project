@@ -1,0 +1,105 @@
+.review-item {
+  border: 1px solid #e5e7eb;
+  padding: 15px;
+  border-radius: 8px;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  position: relative;
+}
+
+/* 내가 쓴 리뷰에만 적용되는 스타일 */
+.review-item.is-mine:hover {
+  border-color: #3B6C55; 
+  box-shadow: 0 0 0 2px rgba(59, 108, 85, 0.2); 
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.review-actions {
+  display: flex;
+  gap: 16px; 
+}
+
+.review-actions button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+/* 수정 버튼 */
+.review-actions button:first-of-type {
+  color: #999;
+}
+.review-actions button:first-of-type:hover {
+  color: #3B6C55;
+}
+
+/* 삭제 버튼 */
+.review-actions button:last-of-type {
+  color: #999; 
+}
+.review-actions button:last-of-type:hover {
+  color: #f97316;
+}
+
+.edit-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+  margin-top: 8px;
+  resize: none;
+  min-height: 80px;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.edit-textarea:focus {
+  outline: none;
+  border-color: #3B6C55;
+}
+
+.edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.edit-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.edit-actions button:first-of-type {
+  background-color: #e9ecef;
+  color: #333;
+}
+.edit-actions button:first-of-type:hover {
+  background-color: #dee2e6;
+}
+
+.edit-actions button:last-of-type {
+  background-color: #3B6C55;
+  color: white;
+}
+.edit-actions button:last-of-type:hover {
+  background-color: #2d543f;
+}
+
+.rating-star.editable {
+  cursor: pointer;
+}

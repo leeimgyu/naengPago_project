@@ -1,0 +1,52 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+/* Custom scrollbar */
+.list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.list::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 3px;
+}
+
+.list::-webkit-scrollbar-thumb {
+  background: #d0d0d0;
+  border-radius: 3px;
+}
+
+.list::-webkit-scrollbar-thumb:hover {
+  background: #b0b0b0;
+}
+
+.empty {
+  padding: 60px 20px;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+
+/* 반응형 - 모바일 */
+@media (max-width: 768px) {
+  .list {
+    max-height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .list {
+    max-height: 300px;
+  }
+  
+  .empty {
+    padding: 40px 20px;
+    font-size: 13px;
+  }
+}

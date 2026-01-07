@@ -1,0 +1,384 @@
+/* Store Cards Styles */
+.storeCardsSection {
+  padding: 80px 80px 120px;
+  background: linear-gradient(to bottom, #ffffff 0%, #f5f5f5 100%);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.sectionTitle {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.sectionSubtitle {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 정렬 및 필터 컨트롤 */
+.controls {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sortButtons,
+.filterButtons {
+  display: flex;
+  gap: 8px;
+  background: #f7fafc;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+.sortButton,
+.filterButton {
+  padding: 10px 18px;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: #4a5568;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.sortButton:hover,
+.filterButton:hover {
+  background: #e2e8f0;
+  color: #2d3748;
+}
+
+.sortButton.active,
+.filterButton.active {
+  border-color: var(--brand-color);
+  background: #ffffff;
+  color: var(--brand-color);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(59, 108, 85, 0.15);
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.storeCard {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.storeCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+}
+
+.storeCard.selected {
+  border-color: var(--brand-color);
+  box-shadow: 0 8px 28px rgba(59, 108, 85, 0.2);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.storeName {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin: 0;
+  flex: 1;
+}
+
+.category {
+  background: var(--brand-color);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.cardBody {
+  margin-bottom: 24px;
+}
+
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.infoItem:last-child {
+  margin-bottom: 0;
+}
+
+.infoIcon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.infoText {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.cardFooter {
+  display: flex;
+  gap: 12px;
+}
+
+.directionBtn,
+.detailBtn {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.directionBtn {
+  background: var(--brand-color);
+  color: #ffffff;
+}
+
+.directionBtn:hover {
+  background: #2a5240;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(59, 108, 85, 0.3);
+}
+
+.detailBtn {
+  background: #f0f0f0;
+  color: var(--text-dark);
+}
+
+.detailBtn:hover {
+  background: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+/* Empty State */
+.emptyState {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.emptyIcon {
+  font-size: 64px;
+  margin-bottom: 20px;
+}
+
+.emptyText {
+  font-size: 18px;
+  color: #999;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 1200px) {
+  .cardsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+  }
+}
+
+@media (max-width: 992px) {
+  .storeCardsSection {
+    padding: 60px 60px 100px;
+  }
+
+  .sectionTitle {
+    font-size: 36px;
+  }
+
+  .sectionSubtitle {
+    font-size: 16px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .storeCardsSection {
+    padding: 50px 40px 80px;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  .controls {
+    width: 100%;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .sortButtons,
+  .filterButtons {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+  }
+
+  .sectionSubtitle {
+    font-size: 15px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .storeCard {
+    padding: 25px;
+  }
+
+  .cardHeader {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .category {
+    align-self: flex-start;
+  }
+}
+
+/* 페이지네이션 */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 50px;
+  padding-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.page-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #e0e0e0;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+}
+
+.page-btn.arrow {
+  border-radius: 8px;
+  width: 40px;
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  color: #666;
+}
+
+.page-btn.arrow:hover {
+  background-color: transparent;
+  color: #4a7c59;
+}
+
+.page-btn.arrow:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  color: #666;
+}
+
+.page-btn.arrow:disabled:hover {
+  color: #666;
+}
+
+.page-btn:hover, .page-btn.active {
+  background-color: #4a7c59;
+  color: white;
+  border-color: #4a7c59;
+}
+
+@media (max-width: 480px) {
+  .storeCardsSection {
+    padding: 40px 20px 60px;
+  }
+
+  .sectionTitle {
+    font-size: 28px;
+  }
+
+  .sectionSubtitle {
+    font-size: 14px;
+  }
+
+  .storeCard {
+    padding: 20px;
+  }
+
+  .storeName {
+    font-size: 20px;
+  }
+
+  .cardFooter {
+    flex-direction: column;
+  }
+
+  .directionBtn,
+  .detailBtn {
+    width: 100%;
+  }
+
+  .pagination {
+    gap: 6px;
+    margin-top: 30px;
+  }
+
+  .page-btn {
+    min-width: 36px;
+    height: 36px;
+    font-size: 13px;
+  }
+}

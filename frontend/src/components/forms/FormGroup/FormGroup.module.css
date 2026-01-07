@@ -1,0 +1,96 @@
+/* Form Group Styles */
+.formGroup {
+  margin-bottom: 24px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-dark);
+  font-size: 14px;
+}
+
+.formGroup .required {
+  color: #f44637;
+  margin-left: 2px;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup input[type="password"],
+.formGroup input[type="tel"] {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background: #fafafa;
+}
+
+.formGroup input::placeholder {
+  color: #999999;
+}
+
+.formGroup input:focus {
+  outline: none;
+  border-color: #3b6c55;
+  background: var(--text-light);
+  box-shadow: 0 0 0 3px rgba(59, 108, 85, 0.1);
+}
+
+.formGroup.error input {
+  border-color: #f44637;
+  background: #fff5f5;
+}
+
+.formGroup.success input {
+  border-color: #4caf50;
+  background: #f0f9f4;
+}
+
+.errorMessage {
+  display: none;
+  color: #f44637;
+  font-size: 13px;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.errorMessage.active {
+  display: block;
+  animation: slideDown 0.3s ease-out;
+}
+
+.inputHint {
+  margin-top: 6px;
+}
+
+.inputHint small {
+  font-size: 13px;
+  color: #888;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .formGroup {
+    margin-bottom: 18px;
+  }
+
+  .formGroup input {
+    padding: 12px 14px;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,167 @@
+.sloganSection {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 70px);
+  overflow: hidden;
+  background: #fff;
+  color:#fff;
+}
+
+.videoSliderContainer {
+  width: 100%;
+  height: calc(100vh - 70px);
+  background:#ccc;
+  position: absolute;
+  overflow: hidden;
+  transition: clip-path 0.5s ease-in-out;
+  top: 0;
+  left: 0;
+  clip-path: inset(0 10% 0 10%);
+}
+
+.videoSliderContainer.expanded {
+  clip-path: inset(0 0 0 0);
+}
+
+.videoSlide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.videoSlide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.videoSlide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlayContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  text-align: center;
+  pointer-events: none;
+}
+
+.overlayContent h2 {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #1a1a1a;
+  text-shadow: none;
+  transition: color 0.8s ease-in-out, text-shadow 0.8s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.overlayContent p {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 10px;
+  color: #666;
+  text-shadow: none;
+  transition: color 0.8s ease-in-out, text-shadow 0.8s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+/* 비디오 확장 시 텍스트 색상 변경 */
+.overlayContent.expanded h2 {
+  color: var(--text-light);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.overlayContent.expanded p {
+  color: var(--text-light);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Styles */
+@media (max-width: 1536px) {
+  .overlayContent h2 {
+    font-size: 56px;
+  }
+
+  .overlayContent p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .sloganSection {
+    height: 90vh;
+  }
+
+  .videoSliderContainer {
+    height: 90vh;
+  }
+
+  .overlayContent h2 {
+    font-size: 48px;
+  }
+
+  .overlayContent p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .sloganSection {
+    height: 85vh;
+  }
+
+  .videoSliderContainer {
+    height: 85vh;
+  }
+
+  .overlayContent h2 {
+    font-size: 40px;
+  }
+
+  .overlayContent p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sloganSection {
+    height: 80vh;
+  }
+
+  .videoSliderContainer {
+    height: 80vh;
+  }
+
+  .overlayContent h2 {
+    font-size: 36px;
+  }
+
+  .overlayContent p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 639px) {
+  .sloganSection {
+    height: 70vh;
+  }
+
+  .videoSliderContainer {
+    height: 70vh;
+  }
+
+  .overlayContent h2 {
+    font-size: 28px;
+  }
+
+  .overlayContent p {
+    font-size: 12px;
+  }
+}

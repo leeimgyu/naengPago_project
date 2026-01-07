@@ -1,0 +1,19 @@
+/* Grocery Page Styles */
+.groceryPage {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* 페이지 전환 애니메이션 */
+.groceryPage {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

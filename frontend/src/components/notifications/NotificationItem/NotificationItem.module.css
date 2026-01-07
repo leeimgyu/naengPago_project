@@ -1,0 +1,131 @@
+.item {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  transition: background-color 0.2s;
+}
+
+.item:hover {
+  background-color: #f9f9f9;
+}
+
+.icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.icon.expiration {
+  background-color: #fff3e0;
+}
+
+.icon.expiration svg {
+  color: #ff9800;
+  width: 24px;
+  height: 24px;
+}
+
+.icon.recipe {
+  background-color: #e8f5e9;
+}
+
+.icon.recipe svg {
+  color: #4caf50;
+  width: 24px;
+  height: 24px;
+}
+
+.icon.event {
+  background-color: #fce4ec;
+}
+
+.icon.event svg {
+  color: #e91e63;
+  width: 24px;
+  height: 24px;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.itemHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.title {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.timestamp {
+  color: #999;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.message {
+  margin: 0 0 8px 0;
+  color: #666;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.action {
+  color: #3b6c55;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 13px;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.action:hover {
+  opacity: 0.7;
+}
+
+/* 반응형 - 모바일 */
+@media (max-width: 480px) {
+  .item {
+    gap: 10px;
+    padding: 10px 8px;
+  }
+  
+  .icon {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .icon.expiration svg,
+  .icon.recipe svg,
+  .icon.event svg {
+    width: 22px;
+    height: 22px;
+  }
+  
+  .title {
+    font-size: 13px;
+  }
+  
+  .message {
+    font-size: 12px;
+  }
+  
+  .timestamp {
+    font-size: 11px;
+  }
+}

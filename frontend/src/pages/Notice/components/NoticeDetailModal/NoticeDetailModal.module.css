@@ -1,0 +1,200 @@
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modalContent {
+  background-color: white;
+  border-radius: 8px;
+  max-width: 900px;
+  width: 90%;
+  max-height: 85vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalHeader {
+  padding: 30px 40px;
+  border-bottom: 2px solid #f0f0f0;
+  background-color: #fafafa;
+}
+
+.modalTitleArea {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.modalTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+  flex: 1;
+}
+
+.modalClose {
+  font-size: 28px;
+  cursor: pointer;
+  color: #999;
+  transition: color 0.3s;
+  line-height: 1;
+}
+
+.modalClose:hover {
+  color: #333;
+}
+
+.modalInfo {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+.modalInfo span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.modalBody {
+  padding: 40px;
+  overflow-y: auto;
+  flex: 1;
+  line-height: 1.8;
+  color: #444;
+  font-size: 15px;
+}
+
+.modalBody p {
+  margin-bottom: 12px;
+}
+
+.modalBody strong {
+  color: #222;
+  font-weight: 600;
+}
+
+.modalFooter {
+  padding: 20px 40px;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #fafafa;
+}
+
+.btnEdit {
+  padding: 12px 30px;
+  background-color: #fb9a5a; 
+  color:#fff; 
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-right: 10px; /* 목록으로 버튼과의 간격 */
+}
+
+.btnEdit:hover {
+  background-color: #fb8a3f;
+
+}
+
+.btnList {
+  padding: 12px 30px;
+  background-color: #4a7c59;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btnList:hover {
+  background-color: #3d6849;
+}
+
+/* 첨부파일 섹션 */
+.attachmentSection {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px solid #f0f0f0;
+}
+
+.attachmentTitle {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.attachmentList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.attachmentItem {
+  margin-bottom: 10px;
+}
+
+.attachmentLink {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #495057;
+  transition: all 0.3s ease;
+}
+
+.attachmentLink:hover {
+  background-color: #e8f1ec;
+  border-color: #4a7c59;
+  color: #4a7c59;
+}
+
+.fileName {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.fileSize {
+  font-size: 12px;
+  color: #6c757d;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modalContent {
+    width: 95%;
+  }
+
+  .modalHeader,
+  .modalBody,
+  .modalFooter {
+    padding: 20px;
+  }
+}

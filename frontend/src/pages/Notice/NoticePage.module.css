@@ -1,0 +1,55 @@
+.mainContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 40px;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 30px;
+}
+
+.breadcrumb a {
+  color: #888;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+  color: #4a7c59;
+}
+
+.breadcrumb span {
+  color: #4a7c59;
+  font-weight: 500;
+}
+
+.pageHeader {
+  margin: 100px 0 50px 0;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #4a7c59;
+  text-align: center;
+}
+
+.pageTitle {
+  font-size: 36px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+.pageDescription {
+  font-size: 15px;
+  color: #777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mainContainer {
+    padding: 40px 20px;
+  }
+}

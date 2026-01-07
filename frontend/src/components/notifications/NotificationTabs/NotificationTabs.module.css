@@ -1,0 +1,54 @@
+.tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tab {
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+
+.tab.active {
+  background-color: #fb9a5a;
+  color: white;
+}
+
+.tab.recipeActive {
+  background-color: #3b6c55;
+  color: white;
+}
+
+.tab:not(.active) {
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+/* 공지사항 탭의 hover (연한 녹색) */
+.tab.recipeTab:not(.active):hover {
+  background-color: #a8c9b8;
+  color: white;
+}
+
+/* 전체/유통기한 탭의 hover (연한 주황색) */
+.tab:not(.recipeTab):not(.active):hover {
+  background-color: #ffdab9;
+  color: white;
+}
+
+/* 반응형 - 모바일 */
+@media (max-width: 480px) {
+  .tabs {
+    gap: 6px;
+  }
+  
+  .tab {
+    padding: 7px 14px;
+    font-size: 12px;
+  }
+}

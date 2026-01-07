@@ -1,0 +1,184 @@
+/* Ingredients Slider Styles */
+.ingredientsSection {
+  padding: 80px 0;
+}
+
+.containerFullRight {
+  padding: 0 0 0 100px;
+}
+
+.sectionTitle {
+  text-align: left;
+  font-size: 36px;
+  color: var(--text-dark);
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.ingredientsSliderContainer {
+  position: relative;
+  padding-bottom: 60px;
+}
+
+.ingredientsBoxWrap {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.ingredientsSliderTrack {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.ingredientsBox {
+  flex: 0 0 85%;
+  position: relative;
+  margin-right: 35px;
+}
+
+.ingredientsBoxImg {
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  display: block;
+  border-radius: 25px;
+}
+
+.ingredientTitle {
+  position: absolute;
+  bottom: 150px;
+  left: 60px;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-light);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.ingredientSubtitle {
+  position: absolute;
+  bottom: 110px;
+  left: 60px;
+  font-size: 18px;
+  color: var(--text-light);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.arrowBox {
+  position: absolute;
+  bottom: 0;
+  right: 100px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+  color: var(--text-dark);
+}
+
+.arrowBox button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.arrowBox button img {
+  width: 15px;
+  height: 15px;
+  display: block;
+}
+
+.arrowBox button:hover {
+  scale:1.3;
+}
+
+.arrowBox span {
+  font-weight: 500;
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.arrowBox .currentSlide {
+  font-weight: 700;
+  color: #555;
+}
+
+/* Responsive Styles */
+@media (max-width: 1536px) {
+  .ingredientsBox {
+    flex: 0 0 80%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .ingredientsBox {
+    flex: 0 0 75%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .containerFullRight {
+    padding-left: 50px;
+  }
+  .ingredientsBox {
+    flex: 0 0 90%;
+  }
+  .arrowBox {
+    right: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .containerFullRight {
+    padding-left: 20px;
+    padding-right: 0;
+  }
+  .ingredientsBox {
+    flex: 0 0 95%;
+    margin-right: 20px;
+  }
+  .ingredientsBoxImg {
+    height: 400px;
+  }
+  .ingredientTitle {
+    font-size: 24px;
+    left: 30px;
+    bottom: 60px;
+  }
+  .ingredientSubtitle {
+    font-size: 16px;
+    left: 30px;
+    bottom: 30px;
+  }
+  .arrowBox {
+    right: 30px;
+  }
+}
+
+@media (max-width: 639px) {
+  .containerFullRight {
+    padding-left: 10px;
+  }
+  .ingredientsSection {
+    padding: 40px 0;
+  }
+  .ingredientsBox {
+    flex: 0 0 100%;
+    margin-right: 10px;
+  }
+  .ingredientsBoxImg {
+    height: 300px;
+  }
+  .ingredientTitle {
+    font-size: 20px;
+    left: 20px;
+    bottom: 50px;
+  }
+  .ingredientSubtitle {
+    font-size: 14px;
+    left: 20px;
+    bottom: 25px;
+  }
+  .arrowBox {
+    right: 20px;
+  }
+}

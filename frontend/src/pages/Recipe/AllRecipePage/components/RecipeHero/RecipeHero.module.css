@@ -1,0 +1,114 @@
+/* Recipe Hero Styles */
+.recipeHeroSection {
+  height: 50vh;
+  min-height: 400px;
+  background: linear-gradient(rgba(42, 82, 64, 0.85), rgba(30, 60, 47, 0.9)),
+    url('/src/assets/image/recipe/salad.jpg'); /* Using a recipe image as background */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.heroOverlay {
+  text-align: center;
+  color: var(--text-light, #ffffff);
+  z-index: 2;
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.heroTitle {
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  letter-spacing: 2px;
+}
+
+.heroSubtitle {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  opacity: 0.95;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+.heroDescription {
+  font-size: 18px;
+  font-weight: 400;
+  opacity: 0.9;
+  line-height: 1.6;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .recipeHeroSection {
+    height: 45vh;
+    min-height: 350px;
+  }
+
+  .heroTitle {
+    font-size: 52px;
+  }
+
+  .heroSubtitle {
+    font-size: 24px;
+  }
+
+  .heroDescription {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .recipeHeroSection {
+    height: 40vh;
+    min-height: 300px;
+    background-attachment: scroll;
+  }
+
+  .heroTitle {
+    font-size: 40px;
+    margin-bottom: 15px;
+  }
+
+  .heroSubtitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .heroDescription {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 32px;
+  }
+
+  .heroSubtitle {
+    font-size: 18px;
+  }
+
+  .heroDescription {
+    font-size: 14px;
+  }
+}

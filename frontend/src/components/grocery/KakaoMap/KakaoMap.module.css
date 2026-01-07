@@ -1,0 +1,109 @@
+/* Kakao Map Styles */
+.mapSection {
+  padding: 80px 80px;
+  background: #ffffff;
+}
+
+.mapContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.mapHeader {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.mapTitle {
+  font-size: 40px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.mapSubtitle {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.map {
+  width: 100%;
+  height: 600px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* 카카오맵 인포윈도우 커스텀 스타일 */
+.map :global(.kakao-infowindow) {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.map :global(.kakao-infowindow .content) {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* 카카오맵 인포윈도우 z-index 조정 (사용자 위치 마커가 가려지지 않도록) */
+/* 카카오맵 인포윈도우의 z-index를 제한하여 사용자 마커(z-index: 9999)보다 아래에 표시 */
+.map :global(.customoverlay) {
+  z-index: 50 !important;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 992px) {
+  .mapSection {
+    padding: 60px 60px;
+  }
+
+  .mapTitle {
+    font-size: 36px;
+  }
+
+  .mapSubtitle {
+    font-size: 16px;
+  }
+
+  .map {
+    height: 500px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mapSection {
+    padding: 50px 40px;
+  }
+
+  .mapTitle {
+    font-size: 32px;
+  }
+
+  .mapSubtitle {
+    font-size: 15px;
+  }
+
+  .map {
+    height: 450px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapSection {
+    padding: 40px 20px;
+  }
+
+  .mapTitle {
+    font-size: 28px;
+  }
+
+  .mapSubtitle {
+    font-size: 14px;
+  }
+
+  .map {
+    height: 400px;
+    border-radius: 12px;
+  }
+}

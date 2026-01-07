@@ -1,0 +1,85 @@
+.section {
+    margin-bottom: 2.5rem;
+  }
+  
+  .sectionHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #dee2e6;
+  }
+  
+  .sectionTitle {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 700;
+  }
+  
+  .addButton {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: #fb9a5a;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .addButton:hover {
+    color: #FFDAB9;
+  }
+  
+  .addButton .material-symbols-outlined {
+    font-size: 1rem;
+  }
+  
+  .ingredientsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .ingredientItem {
+    display: grid;
+    grid-template-columns: 5fr 3fr 3fr 1fr;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .inputName,
+  .inputQuantity,
+  .inputUnit {
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .inputName:focus,
+  .inputQuantity:focus,
+  .inputUnit:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    border-color: #fb9a5a;
+    box-shadow: 0 0 0 2px #fb9a5a;
+  }
+  
+  .deleteButton {
+    display: flex;
+    justify-content: center;
+    color: #6c757d;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .deleteButton:hover {
+    color:  #FFA07A;
+  }
+  

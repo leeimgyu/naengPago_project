@@ -1,0 +1,314 @@
+/* Email Reject Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(2px);
+}
+
+.modalContent {
+  background: white;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 800px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modalHeader {
+  padding: 24px 32px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modalHeader h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 32px;
+  color: #6b7280;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.closeButton:hover {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+
+.modalBody {
+  padding: 32px;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.modalBody section {
+  margin-bottom: 28px;
+}
+
+.modalBody h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 16px;
+}
+
+.modalBody h5 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 10px;
+}
+
+.modalBody p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 12px;
+}
+
+/* Warning Section */
+.warningSection {
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border-left: 4px solid #f59e0b;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 28px;
+}
+
+.warningIcon {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.warningSection h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #92400e;
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+}
+
+/* Law Section */
+.lawSection {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.lawSection ol {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.lawSection li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #4b5563;
+  margin-bottom: 12px;
+}
+
+/* Penalty Section */
+.penaltySection {
+  background: #fef2f2;
+  border: 1px solid #fee2e2;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.penaltySection h5 {
+  color: #991b1b;
+}
+
+.penaltySection p {
+  color: #7f1d1d;
+  font-weight: 500;
+}
+
+.penaltySection ul {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.penaltySection li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #7f1d1d;
+  margin-bottom: 8px;
+}
+
+/* Contact Section */
+.contactSection {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.emailBox {
+  background: white;
+  border: 2px solid #6db168;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.emailBox strong {
+  color: #1f2937;
+  font-size: 15px;
+  margin-right: 8px;
+}
+
+/* Notice Section */
+.noticeSection {
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.noticeSection ul {
+  margin: 12px 0;
+  padding-left: 24px;
+}
+
+.noticeSection li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #1e40af;
+  margin-bottom: 8px;
+}
+
+.modalFooter {
+  padding: 20px 32px;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.confirmButton {
+  background: #6db168;
+  color: white;
+  border: none;
+  padding: 12px 32px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.confirmButton:hover {
+  background: #5a9d56;
+}
+
+/* 스크롤바 스타일 */
+.modalBody::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modalBody::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 4px;
+}
+
+.modalBody::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 4px;
+}
+
+.modalBody::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .modalContent {
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .modalHeader {
+    padding: 20px 24px;
+  }
+
+  .modalHeader h2 {
+    font-size: 20px;
+  }
+
+  .modalBody {
+    padding: 24px;
+  }
+
+  .warningSection {
+    padding: 20px;
+  }
+
+  .warningSection h3 {
+    font-size: 14px;
+  }
+
+  .lawSection,
+  .penaltySection,
+  .contactSection,
+  .noticeSection {
+    padding: 16px;
+  }
+
+  .modalBody h4 {
+    font-size: 16px;
+  }
+
+  .modalBody h5 {
+    font-size: 14px;
+  }
+
+  .modalBody p,
+  .modalBody li {
+    font-size: 13px;
+  }
+
+  .modalFooter {
+    padding: 16px 24px;
+  }
+}

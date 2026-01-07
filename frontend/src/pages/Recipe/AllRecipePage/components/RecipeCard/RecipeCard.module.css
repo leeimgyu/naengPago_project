@@ -1,0 +1,126 @@
+.recipe-card {
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.recipe-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.recipe-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.recipe-content {
+    padding: 25px;
+}
+
+.recipe-category {
+    display: inline-block;
+    padding: 5px 15px;
+    background-color: #e8f3ec;
+    color: #4a7c59;
+    border-radius: 15px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.recipe-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.recipe-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.recipe-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+    color: #999;
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.recipe-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Sample recipe images */
+.korean {
+    background: url('https://images.unsplash.com/photo-1718777791262-c66d11baaa3b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxrb3JlYW4lMjBiaWJpbWJhcCUyMHJpY2UlMjBib3dsfGVufDF8fHx8MTc2MTYyNDQyNnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral') center center / cover no-repeat;
+}
+
+.japanese {
+    background: url('https://images.unsplash.com/photo-1700324822763-956100f79b0d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxzdXNoaSUyMGphcGFuZXNlJTIwZm9vZHxlbnwxfHx8fDE3NjE1OTQxNDZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral') center center / cover no-repeat;
+}
+
+.western {
+    background: url('https://images.unsplash.com/photo-1761315601031-f31099c14dcc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxwYXN0YSUyMGRpc2glMjBwbGF0ZWR8ZW58MXx8fHwxNzYxNjI3NTY2fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral') center center / cover no-repeat;
+}
+
+.chinese {
+    background: url('https://images.unsplash.com/photo-1646340916384-9845d7686e2e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxmcmllZCUyMHJpY2UlMjBhc2lhbnxlbnwxfHx8fDE3NjE1NzcxNzZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral') center center / cover no-repeat;
+}
+@media (max-width: 759px) {
+    .recipe-card {
+        flex-direction: row;
+        height: 160px; /* Set a fixed height for the horizontal card */
+    }
+
+    .recipe-image {
+        width: 50%;
+        height: 100%;
+        flex-shrink: 0;
+    }
+
+    .recipe-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        flex-grow: 1;
+        min-width: 0; /* Prevents content from overflowing the card */
+    }
+
+    .recipe-title {
+        font-size: 18px;
+    }
+    .recipe-category{
+        width:55px;
+    }
+    .recipe-desc {
+        font-size: 13px;
+        margin-bottom: 10px;
+        /* Hide long descriptions on small cards */
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* number of lines to show */
+        -webkit-box-orient: vertical;
+    }
+
+    .recipe-meta {
+        font-size: 12px;
+        gap: 15px;
+        padding-top: 10px;
+    }
+}

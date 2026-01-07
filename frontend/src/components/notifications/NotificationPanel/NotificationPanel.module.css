@@ -1,0 +1,198 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 950;
+}
+
+.panel {
+  position: fixed;
+  top: 70px;
+  right: 100px;
+  z-index: 1000;
+  width: 460px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  padding: 24px;
+  border: 1px solid #e8e8e8;
+}
+
+/* Speech bubble arrow */
+.arrow {
+  position: absolute;
+  top: -10px;
+  right: 70px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+}
+
+.arrowBorder {
+  position: absolute;
+  top: -11px;
+  right: 70px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 11px solid #e8e8e8;
+}
+
+.viewAll {
+  width: 100%;
+  margin-top: 16px;
+  padding-top: 16px;
+  text-align: center;
+  color: #fa9a5a;
+  background: transparent;
+  border: none;
+  border-top: 1px solid #f0f0f0;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.viewAll:hover {
+  opacity: 0.7;
+}
+
+/* 반응형 - 태블릿 */
+@media (max-width: 1024px) {
+  .panel {
+    right: 40px;
+    width: 400px;
+  }
+
+  .arrow {
+    right: 40px;
+  }
+
+  .arrowBorder {
+    right: 40px;
+  }
+}
+
+/* 반응형 - 모바일 */
+@media (max-width: 768px) {
+  .panel {
+    top: 70px;
+    right: 20px;
+    left: 20px;
+    width: auto;
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .arrow {
+    right: 20px;
+  }
+
+  .arrowBorder {
+    right: 20px;
+  }
+
+  .viewAll {
+    font-size: 14px;
+  }
+}
+
+/* 반응형 - 작은 모바일 */
+@media (max-width: 480px) {
+  .panel {
+    border-radius: 12px;
+    padding: 16px;
+  }
+}
+
+/* 만료 재료 안내 섹션 */
+.expiredSection {
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe8e8 100%);
+  border: 2px solid #fecaca;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 16px;
+}
+
+.expiredHeader {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.expiredIcon {
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.expiredInfo {
+  flex: 1;
+}
+
+.expiredTitle {
+  font-size: 15px;
+  color: #dc2626;
+  margin: 0 0 4px 0;
+  font-weight: 500;
+}
+
+.expiredTitle strong {
+  font-weight: 700;
+  color: #b91c1c;
+}
+
+.expiredMessage {
+  font-size: 13px;
+  color: #991b1b;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.goToFridge {
+  width: 100%;
+  background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(220, 38, 38, 0.2);
+}
+
+.goToFridge:hover {
+  background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
+
+.goToFridge:active {
+  transform: translateY(0);
+}
+
+/* 반응형 - 작은 모바일 (만료 섹션) */
+@media (max-width: 480px) {
+  .expiredSection {
+    padding: 12px;
+  }
+
+  .expiredTitle {
+    font-size: 14px;
+  }
+
+  .expiredMessage {
+    font-size: 12px;
+  }
+
+  .goToFridge {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
